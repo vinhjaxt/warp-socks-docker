@@ -11,7 +11,7 @@ DIR="$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )"
 HOST_NAME="warp-socks"
 
 if [[ "$(docker images -q "${HOST_NAME}:latest" 2> /dev/null)" == "" || "$1" != "" ]]; then
-  docker build -t "${HOST_NAME}:latest" "${DIR}/build"
+  docker build -t "${HOST_NAME}:latest" "${DIR}"
   if [ $? -eq 0 ]; then
       echo 'Build done'
   else
